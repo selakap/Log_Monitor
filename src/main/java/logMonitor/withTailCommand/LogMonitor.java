@@ -100,13 +100,14 @@ public class LogMonitor implements Runnable{
 
     //target operation
     public void run() {
+
         System.out.println(Thread.currentThread().getName()+" (Start) run()\n");
+        //do the operation
     }
 
     //scheduled task
     private static class MyTask extends TimerTask {
         public void run() {
-            // Your code here
             currentLogFileSize = getLogFileSize(logFilePath);
             System.out.println("Executing task... " + logFileSize +"/"+ currentLogFileSize);
         }
